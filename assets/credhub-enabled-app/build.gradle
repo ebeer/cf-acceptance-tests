@@ -8,7 +8,6 @@ buildscript {
 
     dependencies {
         classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
-        classpath 'io.spring.gradle:spring-io-plugin:0.0.7.RELEASE'
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 
@@ -29,15 +28,13 @@ apply plugin: 'org.springframework.boot'
 dependencies {
     compile 'org.springframework.credhub:spring-credhub-starter:1.0.0.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.json', name: 'json', version: '20180130'
 }
 
 repositories {
     mavenCentral()
 }
 
-springBoot {
-    backupSource = false
-}
 
 jar {
     baseName = 'credhub-enabled-app'
